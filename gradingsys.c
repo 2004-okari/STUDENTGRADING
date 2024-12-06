@@ -6,12 +6,12 @@
 #include <string.h>
 
 #define MAX_STUDENTS 100
-#define PASS_MARK 50
+#define PASS_MARK 60
 
 typedef struct {
   int id;
   char name[50];
-  char class[10];
+  char class[25];
   int math;
   int english;
   int computer;
@@ -190,35 +190,56 @@ int main() {
     printf("1. Add Student\n2. Query Student\n3. Sort Students by Average\n4. Sort Students by Computer\n5. Delete Student\n6. Modify Student\n7. Class Performance Analysis\n8. Output Students\n9. Exit\n");
     printf("Enter your choice: ");
     scanf("%d", &choice);
-    switch (choice) {
-      case 1:
-        add_student();
-        break;
-      case 2:
-        query_student();
-        break;
-      case 3:
-        sort_students_by_average();
-        break;
-      case 4:
-        sort_students_by_computer();
-        break;
-      case 5:
-        delete_student();
-        break;
-      case 6:
-        modify_student();
-        break;
-      case 7:
-        class_performance_analysis();
-        break;
-      case 8:
-        output_students();
-        break;
-      case 9:
-        exit(0);
-      default:
-        printf("Invalid choice.\n");
+    // switch (choice) {
+    //   case 1:
+    //     add_student();
+    //     break;
+    //   case 2:
+    //     query_student();
+    //     break;
+    //   case 3:
+    //     sort_students_by_average();
+    //     break;
+    //   case 4:
+    //     sort_students_by_computer();
+    //     break;
+    //   case 5:
+    //     delete_student();
+    //     break;
+    //   case 6:
+    //     modify_student();
+    //     break;
+    //   case 7:
+    //     class_performance_analysis();
+    //     break;
+    //   case 8:
+    //     output_students();
+    //     break;
+    //   case 9:
+    //     exit(0);
+    //   default:
+    //     printf("Invalid choice.\n");
+    // }
+    if (choice == 1) {
+      add_student();
+    } else if (choice == 2) {
+      query_student();
+    } else if (choice == 3) {
+      sort_students_by_average();
+    } else if (choice == 4) {
+      sort_students_by_computer();
+    } else if (choice == 5) {
+      delete_student();
+    } else if (choice == 6) {
+      modify_student();
+    } else if (choice == 7) {
+      class_performance_analysis();
+    } else if (choice == 8) {
+      output_students();
+    } else if (choice == 9) {
+      exit(0);
+    } else {
+      printf("Invalid choice.\n");
     }
   }
   return 0;
